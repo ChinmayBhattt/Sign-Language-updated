@@ -6,7 +6,7 @@
   "scripts": {
     "start": "npx @11ty/eleventy --serve",
     "css": "npx tailwindcss -i ./style.css -o ./_site/css/styles.css --watch",
-    "build": "npx @11ty/eleventy",
+    "build": "npm run build:react && npx @11ty/eleventy",
     "build:react": "webpack --config webpack.react.js",
     "dev": "npm run build:react && npm run start",
     "setup": "npm install && npm run build:react && npm run build && cp -r react-login _site/ && cp -r js _site/ && cp redirect.html _site/",
